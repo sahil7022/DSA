@@ -89,7 +89,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeConcept, onSelect }) => {
       </button>
 
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex w-80 h-full bg-earth-wood text-earth-parchment p-6 flex-col border-r border-earth-ink/20 shrink-0 overflow-y-auto scrollbar-hide">
+      <aside className="hidden lg:flex w-80 h-full bg-earth-wood dark:bg-dark-wood text-earth-parchment p-6 flex-col border-r border-earth-ink/20 dark:border-white/5 shrink-0 overflow-y-auto scrollbar-hide">
         <SidebarContent />
       </aside>
 
@@ -109,7 +109,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeConcept, onSelect }) => {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="lg:hidden fixed inset-y-0 left-0 w-[85%] max-w-sm bg-earth-wood text-earth-parchment p-6 z-[55] shadow-2xl overflow-y-auto scrollbar-hide"
+              className="lg:hidden fixed inset-y-0 left-0 w-[85%] max-w-sm bg-earth-wood dark:bg-dark-wood text-earth-parchment p-6 z-[55] shadow-2xl overflow-y-auto scrollbar-hide"
             >
               <SidebarContent />
             </motion.aside>

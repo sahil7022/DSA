@@ -13,6 +13,7 @@ import LinkedListModule from './components/LinkedListModule';
 import BinaryTreeModule from './components/BinaryTreeModule';
 import SplashScreen from './components/SplashScreen';
 import ScribesChallenge from './components/ScribesChallenge';
+import ThemeToggle from './components/ThemeToggle';
 
 export default function App() {
   const [activeConcept, setActiveConcept] = useState<Concept>('Stack');
@@ -95,13 +96,7 @@ export default function App() {
             </div>
             
             <div className="flex items-center gap-3 md:gap-6">
-              <button
-                onClick={() => setIsDarkMode(!isDarkMode)}
-                className="p-2 rounded-xl bg-earth-clay/10 text-earth-wood dark:text-earth-parchment hover:bg-earth-clay/20 transition-all"
-                title="Toggle Moonlit Fable"
-              >
-                {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
-              </button>
+              <ThemeToggle isDarkMode={isDarkMode} toggle={() => setIsDarkMode(!isDarkMode)} />
 
               <div className="flex items-center gap-2 md:gap-4">
                 <div className="flex flex-col items-end hidden xs:flex">

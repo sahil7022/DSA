@@ -80,20 +80,20 @@ const LinkedListModule: React.FC = () => {
                     exit={{ y: 100, opacity: 0, scale: 0.5 }}
                     className="flex flex-col items-center shrink-0"
                   >
-                    <div className="w-24 h-24 bg-earth-clay/30 rounded-2xl flex flex-col items-center justify-center border-2 border-earth-clay/50 relative group">
-                      <div className="absolute -top-3 bg-earth-wood text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase">
+                    <div className="w-24 h-24 bg-earth-clay/30 dark:bg-white/5 rounded-2xl flex flex-col items-center justify-center border-2 border-earth-clay/50 dark:border-white/10 relative group">
+                      <div className="absolute -top-3 bg-earth-wood dark:bg-earth-clay text-white dark:text-earth-wood text-[10px] px-2 py-0.5 rounded-full font-bold uppercase">
                         {index === 0 ? 'Head' : index === list.length - 1 ? 'Tail' : `Node ${index}`}
                       </div>
                       
                       {/* Camel Icon Placeholder */}
-                      <div className="w-12 h-12 text-earth-wood mb-1">
+                      <div className="w-12 h-12 text-earth-wood dark:text-earth-parchment mb-1">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                           <path d="M17 11c.7-1.2 1.8-2 3-2h1l-2 2h-2zM4 11c-.7-1.2-1.8-2-3-2H0l2 2h2zM7 15h10M7 19h2M15 19h2M12 11V5M9 5h6" />
                           <circle cx="12" cy="11" r="3" />
                         </svg>
                       </div>
                       
-                      <span className="text-earth-wood font-bold text-sm truncate w-20 text-center">{camel.value}</span>
+                      <span className="text-earth-wood dark:text-earth-parchment font-bold text-sm truncate w-20 text-center">{camel.value}</span>
                     </div>
                     
                     <div className="mt-2 text-[10px] font-mono text-earth-clay font-bold">

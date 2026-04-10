@@ -45,56 +45,61 @@ const BinaryTreeModule: React.FC = () => {
     setMessage(`The seed of value ${val} has found its place in the Banyan tree.`);
   };
 
-  const renderTree = (node: TreeNode | null) => {
+  const renderTreeNodes = (node: TreeNode | null): React.ReactNode => {
     if (!node) return null;
 
     return (
       <React.Fragment key={`${node.value}-${node.x}-${node.y}`}>
-        {/* Lines to children */}
-        {node.left && (
-          <svg className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-visible">
-            <motion.line
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              x1={`calc(50% + ${node.x}px)`}
-              y1={`${node.y + 40}px`}
-              x2={`calc(50% + ${node.left.x}px)`}
-              y2={`${node.left.y + 40}px`}
-              stroke="#d2b48c"
-              strokeWidth="2"
-            />
-          </svg>
-        )}
-        {node.right && (
-          <svg className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-visible">
-            <motion.line
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              x1={`calc(50% + ${node.x}px)`}
-              y1={`${node.y + 40}px`}
-              x2={`calc(50% + ${node.right.x}px)`}
-              y2={`${node.right.y + 40}px`}
-              stroke="#d2b48c"
-              strokeWidth="2"
-            />
-          </svg>
-        )}
-
         {/* The Node */}
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           className="absolute w-12 h-12 bg-earth-sage rounded-full flex items-center justify-center text-white font-bold shadow-md border-2 border-white/20 z-10"
           style={{ 
-            left: `calc(50% + ${node.x}px - 24px)`, 
+            left: `${400 + node.x - 24}px`, 
             top: `${node.y + 20}px` 
           }}
         >
           {node.value}
         </motion.div>
 
-        {renderTree(node.left || null)}
-        {renderTree(node.right || null)}
+        {renderTreeNodes(node.left || null)}
+        {renderTreeNodes(node.right || null)}
+      </React.Fragment>
+    );
+  };
+
+  const renderTreeLines = (node: TreeNode | null): React.ReactNode => {
+    if (!node) return null;
+
+    return (
+      <React.Fragment key={`lines-${node.value}`}>
+        {node.left && (
+          <motion.line
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            x1={400 + node.x}
+            y1={node.y + 44}
+            x2={400 + node.left.x}
+            y2={node.left.y + 44}
+            stroke="#d2b48c"
+            strokeWidth="2"
+          />
+        )}
+        {node.right && (
+          <motion.line
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            x1={400 + node.x}
+            y1={node.y + 44}
+            x2={400 + node.right.x}
+            y2={node.right.y + 44}
+            stroke="#d2b48c"
+            strokeWidth="2"
+          />
+        )}
+        {renderTreeLines(node.left || null)}
+        {renderTreeLines(node.right || null)}
       </React.Fragment>
     );
   };
@@ -120,8 +125,15 @@ const BinaryTreeModule: React.FC = () => {
           </div>
 
           <div className="flex-1 relative mt-10 overflow-auto scrollbar-hide min-h-[400px]">
-            <div className="min-w-[800px] h-full relative">
-              {root ? renderTree(root) : (
+            <div className="w-[800px] h-full relative mx-auto">
+              {root ? (
+                <>
+                  <svg className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-visible">
+                    {renderTreeLines(root)}
+                  </svg>
+                  {renderTreeNodes(root)}
+                </>
+              ) : (
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <p className="text-earth-clay/40 font-serif italic text-xl">Plant the first seed...</p>
                 </div>

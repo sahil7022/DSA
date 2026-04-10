@@ -59,15 +59,15 @@ const ScribesChallenge: React.FC<ScribesChallengeProps> = ({ concept }) => {
   };
 
   return (
-    <div className="story-card p-6 bg-gradient-to-br from-earth-terracotta/5 to-earth-sage/5 border-earth-terracotta/20">
+    <div className="story-card p-6 bg-gradient-to-br from-earth-terracotta/5 to-earth-sage/5 dark:from-earth-terracotta/10 dark:to-earth-sage/10 border-earth-terracotta/20">
       <div className="flex items-center gap-3 mb-6">
         <div className="bg-earth-terracotta p-2 rounded-xl text-white">
           <Trophy size={20} />
         </div>
-        <h3 className="text-xl font-serif font-bold text-earth-wood">The Scribe's Challenge</h3>
+        <h3 className="text-xl font-serif font-bold text-earth-wood dark:text-earth-parchment">The Scribe's Challenge</h3>
       </div>
 
-      <p className="text-earth-wood font-medium mb-6 leading-relaxed">
+      <p className="text-earth-wood dark:text-earth-parchment font-medium mb-6 leading-relaxed">
         {challenge.question}
       </p>
 
@@ -82,7 +82,7 @@ const ScribesChallenge: React.FC<ScribesChallengeProps> = ({ concept }) => {
                 ? isCorrect
                   ? 'border-earth-sage bg-earth-sage/10 text-earth-sage'
                   : 'border-earth-terracotta bg-earth-terracotta/10 text-earth-terracotta'
-                : 'border-earth-clay/20 hover:border-earth-terracotta/40 text-earth-wood/70'
+                : 'border-earth-clay/20 dark:border-white/10 hover:border-earth-terracotta/40 dark:hover:border-earth-terracotta/40 text-earth-wood/70 dark:text-earth-parchment/70'
             }`}
           >
             <span className="text-sm font-medium">{option}</span>

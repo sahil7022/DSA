@@ -13,10 +13,10 @@
   --color-earth-ink: #2c241e;
   
   /* Dark Mode Variants */
-  --color-dark-ink: #1a1614;
-  --color-dark-wood: #2c241e;
-  --color-dark-parchment: #2c241e;
-  --color-dark-clay: #5d4a3a;
+  --color-dark-ink: #0d0b0a;
+  --color-dark-wood: #1a1512;
+  --color-dark-clay: #4a3b2f;
+  --color-dark-accent: #d36a4d;
 }
 
 @layer base {
@@ -25,7 +25,9 @@
   }
 
   .dark body {
-    @apply bg-dark-ink text-earth-parchment;
+    @apply bg-dark-ink text-earth-parchment/90;
+    background-image: radial-gradient(circle at 50% 50%, rgba(210, 180, 140, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 
   h1, h2, h3, h4, h5, h6 {
