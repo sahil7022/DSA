@@ -13,21 +13,15 @@ import LinkedListModule from './components/LinkedListModule';
 import BinaryTreeModule from './components/BinaryTreeModule';
 import SplashScreen from './components/SplashScreen';
 import ScribesChallenge from './components/ScribesChallenge';
-import ThemeToggle from './components/ThemeToggle';
 
 export default function App() {
   const [activeConcept, setActiveConcept] = useState<Concept>('Stack');
   const [showSplash, setShowSplash] = useState(true);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [showChallenge, setShowChallenge] = useState(false);
 
   useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
+    document.documentElement.classList.add('dark');
+  }, []);
 
   const renderContent = () => {
     return (
@@ -53,7 +47,7 @@ export default function App() {
           {/* Scribe's Challenge Section */}
           <div className="mt-12">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-serif font-bold text-earth-wood dark:text-earth-parchment">The Scribe's Trial</h2>
+              <h2 className="text-2xl font-serif font-bold text-earth-parchment">The Scribe's Trial</h2>
               <button 
                 onClick={() => setShowChallenge(!showChallenge)}
                 className="text-sm font-bold text-earth-terracotta uppercase tracking-widest hover:underline"
@@ -83,12 +77,12 @@ export default function App() {
     <>
       {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
       
-      <div className="flex h-screen w-full overflow-hidden bg-earth-parchment dark:bg-dark-ink transition-colors duration-500">
+      <div className="flex h-screen w-full overflow-hidden bg-dark-ink transition-colors duration-500">
         <Sidebar activeConcept={activeConcept} onSelect={setActiveConcept} />
         
         <main className="flex-1 flex flex-col relative overflow-hidden">
           {/* Header */}
-          <header className="h-16 px-4 md:px-8 flex items-center justify-between border-b border-earth-clay/10 bg-white/50 dark:bg-dark-wood/50 backdrop-blur-md z-40">
+          <header className="h-16 px-4 md:px-8 flex items-center justify-between border-b border-earth-clay/10 bg-dark-wood/50 backdrop-blur-md z-40">
             <div className="flex items-center gap-2 text-xs md:text-sm">
               <span className="text-earth-clay font-medium hidden sm:inline">Concepts</span>
               <span className="text-earth-clay/40 hidden sm:inline">/</span>
@@ -96,12 +90,10 @@ export default function App() {
             </div>
             
             <div className="flex items-center gap-3 md:gap-6">
-              <ThemeToggle isDarkMode={isDarkMode} toggle={() => setIsDarkMode(!isDarkMode)} />
-
               <div className="flex items-center gap-2 md:gap-4">
                 <div className="flex flex-col items-end hidden xs:flex">
                   <span className="text-[10px] uppercase tracking-[0.2em] text-earth-clay font-bold">Vayu Voxels</span>
-                  <span className="text-xs font-serif text-earth-wood dark:text-earth-parchment font-semibold italic">Team 4</span>
+                  <span className="text-xs font-serif text-earth-parchment font-semibold italic">Team 4</span>
                 </div>
                 <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-earth-terracotta flex items-center justify-center text-white font-bold shadow-lg shadow-earth-terracotta/20">
                   4

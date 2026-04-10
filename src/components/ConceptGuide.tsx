@@ -54,9 +54,9 @@ const ConceptGuide: React.FC<ConceptGuideProps> = ({ concept }) => {
     <div className="mt-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-4 bg-earth-clay/10 hover:bg-earth-clay/20 dark:bg-white/5 dark:hover:bg-white/10 rounded-2xl transition-all duration-200 border border-earth-clay/20 dark:border-white/10 group"
+        className="w-full flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 rounded-2xl transition-all duration-200 border border-white/10 group"
       >
-        <div className="flex items-center gap-3 text-earth-wood dark:text-earth-parchment font-bold text-sm">
+        <div className="flex items-center gap-3 text-earth-parchment font-bold text-sm">
           <div className="bg-earth-terracotta/10 p-2 rounded-lg group-hover:bg-earth-terracotta/20 transition-colors">
             <Info size={18} className="text-earth-terracotta" />
           </div>
@@ -80,8 +80,8 @@ const ConceptGuide: React.FC<ConceptGuideProps> = ({ concept }) => {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <div className="p-6 bg-white/50 dark:bg-dark-wood/50 backdrop-blur-sm rounded-2xl mt-2 border border-earth-clay/10 dark:border-white/5 space-y-4 shadow-inner">
-              <p className="text-earth-wood dark:text-earth-parchment font-medium italic text-sm leading-relaxed">
+            <div className="p-6 bg-dark-wood/50 backdrop-blur-sm rounded-2xl mt-2 border border-white/5 space-y-4 shadow-inner">
+              <p className="text-earth-parchment font-medium italic text-sm leading-relaxed">
                 "{guide.summary}"
               </p>
               
@@ -89,7 +89,7 @@ const ConceptGuide: React.FC<ConceptGuideProps> = ({ concept }) => {
                 <p className="text-[10px] uppercase tracking-widest font-bold text-earth-terracotta">The Ritual:</p>
                 <ul className="space-y-2">
                   {guide.steps.map((step, i) => (
-                    <li key={i} className="flex gap-3 text-xs text-earth-wood/80 dark:text-earth-parchment/70 leading-relaxed">
+                    <li key={i} className="flex gap-3 text-xs text-earth-parchment/70 leading-relaxed">
                       <span className="text-earth-sage font-bold">{i + 1}.</span>
                       {step}
                     </li>
@@ -97,9 +97,9 @@ const ConceptGuide: React.FC<ConceptGuideProps> = ({ concept }) => {
                 </ul>
               </div>
 
-              <div className="pt-4 border-t border-earth-clay/10 dark:border-white/10">
+              <div className="pt-4 border-t border-white/10">
                 <p className="text-[10px] uppercase tracking-widest font-bold text-earth-terracotta mb-1">Warning:</p>
-                <p className="text-xs text-earth-wood/60 dark:text-earth-parchment/50 italic">
+                <p className="text-xs text-earth-parchment/50 italic">
                   {guide.warning}
                 </p>
               </div>

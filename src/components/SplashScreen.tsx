@@ -13,7 +13,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
       animate={{ opacity: 0 }}
       transition={{ duration: 1, delay: 3.5 }}
       onAnimationComplete={onComplete}
-      className="fixed inset-0 z-[100] bg-earth-wood flex flex-col items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-[100] bg-dark-ink flex flex-col items-center justify-center overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">

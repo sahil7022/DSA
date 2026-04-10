@@ -91,13 +91,13 @@ const CodeSnippet: React.FC<CodeSnippetProps> = ({ concept }) => {
     <div className="mt-6">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-4 bg-earth-wood/5 dark:bg-white/5 rounded-2xl border border-earth-clay/20 hover:bg-earth-wood/10 transition-all group"
+        className="w-full flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all group"
       >
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-earth-wood text-white rounded-lg">
+          <div className="p-2 bg-earth-terracotta text-white rounded-lg">
             <Code2 size={18} />
           </div>
-          <span className="font-serif font-bold text-earth-wood dark:text-earth-parchment">The Ancient Script (Code)</span>
+          <span className="font-serif font-bold text-earth-parchment">The Ancient Script (Code)</span>
         </div>
         {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
       </button>

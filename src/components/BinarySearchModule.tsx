@@ -115,15 +115,15 @@ const BinarySearchModule: React.FC = () => {
         <div className="flex-1 story-card p-6 md:p-8 flex flex-col relative overflow-hidden min-h-[500px]">
           <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8 z-20">
             <div className="max-w-md">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-earth-wood dark:text-earth-parchment">The Wise King's Guess</h2>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-earth-parchment">The Wise King's Guess</h2>
               <p className="text-earth-clay italic">A tale of sorted scrolls (Binary Search)</p>
             </div>
-            <div className="bg-earth-clay/10 dark:bg-white/5 p-4 rounded-2xl w-full md:max-w-xs border border-earth-clay/20">
-              <div className="flex items-center gap-2 mb-1 text-earth-wood dark:text-earth-parchment font-bold text-sm">
+            <div className="bg-white/5 p-4 rounded-2xl w-full md:max-w-xs border border-earth-clay/20">
+              <div className="flex items-center gap-2 mb-1 text-earth-parchment font-bold text-sm">
                 <Info size={16} />
                 <span>The Moral</span>
               </div>
-              <p className="text-xs text-earth-wood/70 dark:text-earth-parchment/70 leading-relaxed">
+              <p className="text-xs text-earth-parchment/70 leading-relaxed">
                 By always looking in the middle, the King halves his labor with every step. Order is the key to swiftness.
               </p>
             </div>
@@ -158,7 +158,7 @@ const BinarySearchModule: React.FC = () => {
                       ? 'bg-earth-sage border-earth-sage text-white' 
                       : isMid 
                         ? 'bg-earth-terracotta border-earth-terracotta text-white'
-                        : 'bg-earth-clay/20 border-earth-clay/40 text-earth-wood dark:text-earth-parchment'
+                        : 'bg-earth-clay/20 border-earth-clay/40 text-earth-parchment'
                   }`}
                 >
                   <div className="absolute top-0 w-full h-2 bg-black/10 rounded-t-lg" />
@@ -187,7 +187,7 @@ const BinarySearchModule: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 lg:w-80 shrink-0">
           <div className="story-card p-6">
-            <h3 className="text-lg font-serif font-bold text-earth-wood dark:text-earth-parchment mb-4">Search Tools</h3>
+            <h3 className="text-lg font-serif font-bold text-earth-parchment mb-4">Search Tools</h3>
             <div className="flex flex-col gap-4">
               <div>
                 <label className="text-xs font-bold text-earth-clay uppercase tracking-widest mb-1 block">Target Value</label>
@@ -197,7 +197,7 @@ const BinarySearchModule: React.FC = () => {
                   onChange={(e) => setTarget(e.target.value === '' ? '' : parseInt(e.target.value))}
                   onKeyDown={(e) => e.key === 'Enter' && startSearch()}
                   placeholder="1-100"
-                  className="w-full bg-earth-parchment dark:bg-dark-ink border border-earth-clay/30 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-earth-terracotta/20 transition-all text-earth-wood dark:text-earth-parchment"
+                  className="w-full bg-dark-ink border border-earth-clay/30 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-earth-terracotta/20 transition-all text-earth-parchment"
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
@@ -209,7 +209,7 @@ const BinarySearchModule: React.FC = () => {
                       value={customInput}
                       onChange={(e) => setCustomInput(e.target.value)}
                       placeholder="10, 20, 30..."
-                      className="flex-1 bg-earth-parchment dark:bg-dark-ink border border-earth-clay/30 rounded-lg px-3 py-2 text-xs focus:outline-none text-earth-wood dark:text-earth-parchment"
+                      className="flex-1 bg-dark-ink border border-earth-clay/30 rounded-lg px-3 py-2 text-xs focus:outline-none text-earth-parchment"
                     />
                     <button 
                       onClick={handleCustomArray}
@@ -249,7 +249,7 @@ const BinarySearchModule: React.FC = () => {
             </div>
           </div>
 
-          <div className="story-card p-6 bg-earth-wood dark:bg-dark-ink text-earth-parchment flex flex-col relative overflow-hidden">
+          <div className="story-card p-6 bg-dark-ink text-earth-parchment flex flex-col relative overflow-hidden">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2 text-earth-terracotta">
                 <Search size={20} />

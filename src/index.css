@@ -21,11 +21,7 @@
 
 @layer base {
   body {
-    @apply bg-earth-parchment text-earth-ink font-sans antialiased transition-colors duration-300;
-  }
-
-  .dark body {
-    @apply bg-dark-ink text-earth-parchment/90;
+    @apply bg-dark-ink text-earth-parchment/90 font-sans antialiased;
     background-image: radial-gradient(circle at 50% 50%, rgba(210, 180, 140, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
   }
@@ -36,11 +32,7 @@
 }
 
 .story-card {
-  @apply bg-white rounded-[32px] shadow-sm border border-earth-clay/20 transition-all duration-300;
-}
-
-.dark .story-card {
-  @apply bg-dark-wood border-earth-clay/10 shadow-xl;
+  @apply bg-dark-wood rounded-[32px] shadow-xl border border-earth-clay/10 transition-all duration-300;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -52,10 +44,6 @@
 }
 
 .glass-panel {
-  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
-}
-
-.dark .glass-panel {
   @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-2xl;
 }
 
@@ -68,9 +56,5 @@
 }
 
 .btn-earth-outline {
-  @apply px-6 py-2 rounded-full font-medium transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none border-2 border-earth-clay text-earth-wood hover:bg-earth-clay/10;
-}
-
-.dark .btn-earth-outline {
-  @apply border-earth-clay/30 text-earth-clay hover:bg-white/5;
+  @apply px-6 py-2 rounded-full font-medium transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none border-2 border-earth-clay/30 text-earth-clay hover:bg-white/5;
 }

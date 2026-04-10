@@ -42,15 +42,15 @@ const StackModule: React.FC = () => {
         <div className="flex-1 story-card p-6 md:p-8 flex flex-col relative overflow-hidden min-h-[500px]">
         <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8 z-20">
           <div className="max-w-md">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-earth-wood dark:text-earth-parchment">The Potter's Stack</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-earth-parchment">The Potter's Stack</h2>
             <p className="text-earth-clay italic">A tale of clay and order (LIFO)</p>
           </div>
-          <div className="bg-earth-clay/10 dark:bg-white/5 p-4 rounded-2xl w-full md:max-w-xs border border-earth-clay/20">
-            <div className="flex items-center gap-2 mb-1 text-earth-wood dark:text-earth-parchment font-bold text-sm">
+          <div className="bg-white/5 p-4 rounded-2xl w-full md:max-w-xs border border-earth-clay/20">
+            <div className="flex items-center gap-2 mb-1 text-earth-parchment font-bold text-sm">
               <Info size={16} />
               <span>The Moral</span>
             </div>
-            <p className="text-xs text-earth-wood/70 dark:text-earth-parchment/70 leading-relaxed">
+            <p className="text-xs text-earth-parchment/70 leading-relaxed">
               Just as the last pot placed on the kiln is the first one taken out, the last element added to a stack is the first one removed.
             </p>
           </div>
@@ -59,7 +59,7 @@ const StackModule: React.FC = () => {
         {/* The Stack Container */}
         <div className="flex-1 flex flex-col-reverse items-center justify-start gap-1 pb-10 relative overflow-y-auto scrollbar-hide">
           {/* Kiln Base */}
-          <div className="w-48 h-4 bg-earth-wood dark:bg-earth-clay rounded-full shadow-md z-10 shrink-0" />
+          <div className="w-48 h-4 bg-earth-clay rounded-full shadow-md z-10 shrink-0" />
           
           <div className="w-full flex flex-col-reverse items-center gap-1 pt-20">
             <AnimatePresence mode="popLayout">
@@ -115,7 +115,7 @@ const StackModule: React.FC = () => {
       {/* Controls & Explainer */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 lg:w-80 shrink-0">
         <div className="story-card p-6">
-          <h3 className="text-lg font-serif font-bold text-earth-wood dark:text-earth-parchment mb-4">Potter's Tools</h3>
+          <h3 className="text-lg font-serif font-bold text-earth-parchment mb-4">Potter's Tools</h3>
           <div className="flex flex-col gap-4">
             <div>
               <label className="text-xs font-bold text-earth-clay uppercase tracking-widest mb-1 block">Pot Label</label>
@@ -125,7 +125,7 @@ const StackModule: React.FC = () => {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && pushToStack()}
                 placeholder="e.g. Grain"
-                className="w-full bg-earth-parchment dark:bg-dark-ink border border-earth-clay/30 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-earth-terracotta/20 transition-all text-earth-wood dark:text-earth-parchment"
+                className="w-full bg-dark-ink border border-earth-clay/30 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-earth-terracotta/20 transition-all text-earth-parchment"
               />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
@@ -147,7 +147,7 @@ const StackModule: React.FC = () => {
           </div>
         </div>
 
-        <div className="story-card p-6 bg-earth-wood dark:bg-dark-ink text-earth-parchment flex flex-col relative overflow-hidden">
+        <div className="story-card p-6 bg-dark-ink text-earth-parchment flex flex-col relative overflow-hidden">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2 text-earth-terracotta">
               <BookOpen size={20} />
