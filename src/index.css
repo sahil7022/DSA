@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --color-earth-parchment: #f5f5f0;
+  --color-earth-terracotta: #c05a3d;
+  --color-earth-sage: #8a9a5b;
+  --color-earth-wood: #4a3728;
+  --color-earth-clay: #d2b48c;
+  --color-earth-ink: #2c241e;
+  
+  /* Dark Mode Variants */
+  --color-dark-ink: #1a1614;
+  --color-dark-wood: #2c241e;
+  --color-dark-parchment: #2c241e;
+  --color-dark-clay: #5d4a3a;
+}
+
+@layer base {
+  body {
+    @apply bg-earth-parchment text-earth-ink font-sans antialiased transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-dark-ink text-earth-parchment;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.story-card {
+  @apply bg-white rounded-[32px] shadow-sm border border-earth-clay/20 transition-all duration-300;
+}
+
+.dark .story-card {
+  @apply bg-dark-wood border-earth-clay/10 shadow-xl;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.glass-panel {
+  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.dark .glass-panel {
+  @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-2xl;
+}
+
+.btn-earth-primary {
+  @apply px-6 py-2 rounded-full font-medium transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none bg-earth-terracotta text-white hover:bg-earth-terracotta/90 hover:shadow-lg hover:shadow-earth-terracotta/30;
+}
+
+.btn-earth-secondary {
+  @apply px-6 py-2 rounded-full font-medium transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none bg-earth-sage text-white hover:bg-earth-sage/90 hover:shadow-lg hover:shadow-earth-sage/30;
+}
+
+.btn-earth-outline {
+  @apply px-6 py-2 rounded-full font-medium transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none border-2 border-earth-clay text-earth-wood hover:bg-earth-clay/10;
+}
+
+.dark .btn-earth-outline {
+  @apply border-earth-clay/30 text-earth-clay hover:bg-white/5;
+}
