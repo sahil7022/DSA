@@ -49,7 +49,7 @@ const LinkedListModule: React.FC = () => {
   return (
     <div className="flex flex-col gap-8 h-full">
       <div className="flex flex-col lg:flex-row gap-8">
-        <div className="flex-1 story-card p-6 md:p-8 flex flex-col relative overflow-hidden bg-earth-parchment/30 dark:bg-dark-wood/20 min-h-[500px]">
+        <div className="flex-1 story-card p-6 md:p-8 flex flex-col relative overflow-hidden min-h-[500px]">
           <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8 z-20">
             <div className="max-w-md">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-earth-wood dark:text-earth-parchment">The Caravan of Camels</h2>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Plus, RotateCcw, Info, GitBranch } from 'lucide-react';
+import { Plus, RotateCcw, Info, GitBranch, MoveHorizontal } from 'lucide-react';
 import CodeSnippet from './CodeSnippet';
 
 interface TreeNode {
@@ -16,6 +16,16 @@ const BinaryTreeModule: React.FC = () => {
   const [root, setRoot] = useState<TreeNode | null>(null);
   const [inputValue, setInputValue] = useState<number | ''>('');
   const [message, setMessage] = useState('The Banyan tree grows from a single seed. Each branch can split into two, left and right.');
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (root && scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const scrollWidth = container.scrollWidth;
+      const clientWidth = container.clientWidth;
+      container.scrollLeft = (scrollWidth - clientWidth) / 2;
+    }
+  }, [root]);
 
   const insert = (node: TreeNode | null, value: number, x: number, y: number, level: number, offset: number): TreeNode => {
     if (!node) {
@@ -107,7 +117,7 @@ const BinaryTreeModule: React.FC = () => {
   return (
     <div className="flex flex-col gap-8 h-full">
       <div className="flex flex-col lg:flex-row gap-8">
-        <div className="flex-1 story-card p-6 md:p-8 flex flex-col relative overflow-hidden bg-earth-parchment/30 dark:bg-dark-wood/20 min-h-[500px]">
+        <div className="flex-1 story-card p-6 md:p-8 flex flex-col relative overflow-hidden min-h-[500px]">
           <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8 z-20">
             <div className="max-w-md">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-earth-wood dark:text-earth-parchment">The Banyan of Ancestors</h2>
@@ -124,7 +134,10 @@ const BinaryTreeModule: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex-1 relative mt-10 overflow-auto scrollbar-hide min-h-[400px]">
+          <div 
+            ref={scrollContainerRef}
+            className="flex-1 relative mt-10 overflow-x-auto scrollbar-hide min-h-[400px] cursor-grab active:cursor-grabbing"
+          >
             <div className="w-[800px] h-full relative mx-auto">
               {root ? (
                 <>
@@ -132,6 +145,17 @@ const BinaryTreeModule: React.FC = () => {
                     {renderTreeLines(root)}
                   </svg>
                   {renderTreeNodes(root)}
+                  
+                  {/* Mobile Hint */}
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 1, 0] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 text-earth-clay/40 lg:hidden pointer-events-none"
+                  >
+                    <MoveHorizontal size={16} />
+                    <span className="text-[10px] uppercase tracking-widest font-bold">Swipe to explore</span>
+                  </motion.div>
                 </>
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
